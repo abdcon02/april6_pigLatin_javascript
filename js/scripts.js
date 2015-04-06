@@ -16,3 +16,14 @@ var pigLatin = function(input) {
     });
     return final.join(" ");
 };
+
+$(document).ready(function() {
+    $("form#pig-latin").submit(function(event) {
+    var input = ($("input#input").val());
+    $(".input").text(input);
+    $(".result").text(pigLatin(input));
+
+    $("#result").show();
+    event.preventDefault();
+    });
+});
